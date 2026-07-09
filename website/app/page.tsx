@@ -6,6 +6,7 @@ import About from "@/components/home/About";
 import Features from "@/components/home/Features";
 import Timeline from "@/components/home/Timeline";
 import FAQ from "@/components/home/FAQ";
+import Footer from "@/components/home/Footer";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Features />
       <Timeline />
       <FAQ />
+      <Footer/>
     </>
   );
 }
