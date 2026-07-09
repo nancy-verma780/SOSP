@@ -42,3 +42,8 @@ export default function Navbar() {
     </nav>
   );
 }
+<li>
+  <a href="/join" className="hover:text-blue-600">
+    Join
+  </a>
+</li>
