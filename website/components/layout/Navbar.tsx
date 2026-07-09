@@ -9,11 +9,30 @@ export default function Navbar() {
 
         {/* Navigation */}
         <ul className="hidden gap-8 text-gray-700 md:flex">
-          <li className="cursor-pointer hover:text-blue-600">About</li>
-          <li className="cursor-pointer hover:text-blue-600">Projects</li>
-          <li className="cursor-pointer hover:text-blue-600">Timeline</li>
-          <li className="cursor-pointer hover:text-blue-600">FAQ</li>
-        </ul>
+  <li>
+    <a href="#about" className="hover:text-blue-600">
+      About
+    </a>
+  </li>
+
+  <li>
+    <a href="#projects" className="hover:text-blue-600">
+      Projects
+    </a>
+  </li>
+
+  <li>
+    <a href="#timeline" className="hover:text-blue-600">
+      Timeline
+    </a>
+  </li>
+
+  <li>
+    <a href="#faq" className="hover:text-blue-600">
+      FAQ
+    </a>
+  </li>
+</ul>
 
         {/* Button */}
         <button className="rounded-lg bg-blue-600 px-5 py-2 text-white transition hover:bg-blue-700">

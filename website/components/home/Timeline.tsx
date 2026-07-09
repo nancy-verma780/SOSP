@@ -33,7 +33,7 @@ const timeline = [
 
 export default function Timeline() {
   return (
-    <section className="bg-gray-50 py-20">
+    <section id="timeline" className="bg-gray-50 py-20">
       <div className="mx-auto max-w-5xl px-6">
 
         <div className="text-center">
