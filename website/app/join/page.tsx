@@ -1,74 +1,48 @@
-export default function Join() {
+export default function JoinPage() {
   return (
-    <main className="min-h-screen bg-gray-50 py-20">
+    <main className="mx-auto max-w-3xl px-6 py-16">
+      <h1 className="mb-3 text-5xl font-bold">Join SOSP</h1>
 
-      <div className="mx-auto max-w-5xl px-6">
+      <p className="mb-10 text-gray-600">
+        Become a part of the Student Open Source Program and start your
+        open-source journey.
+      </p>
 
-        <h1 className="text-center text-5xl font-bold text-gray-900">
-          Join SOSP
-        </h1>
+      <form className="space-y-6 rounded-xl border border-gray-200 bg-white p-8 shadow-sm">
+        <input
+          type="text"
+          placeholder="Full Name"
+          className="w-full rounded-lg border p-3"
+        />
 
-        <p className="mt-6 text-center text-lg text-gray-600">
-          Start your open-source journey with the SOSP community.
-        </p>
+        <input
+          type="email"
+          placeholder="Email Address"
+          className="w-full rounded-lg border p-3"
+        />
 
+        <input
+          type="text"
+          placeholder="GitHub Username"
+          className="w-full rounded-lg border p-3"
+        />
 
-        <div className="mt-12 grid gap-8 md:grid-cols-3">
+        <input
+          type="text"
+          placeholder="College"
+          className="w-full rounded-lg border p-3"
+        />
 
-          <div className="rounded-xl bg-white p-6 shadow-sm border">
-            <h2 className="text-2xl font-semibold">
-              1. Join Community
-            </h2>
+        <textarea
+          placeholder="Why do you want to join SOSP?"
+          rows={5}
+          className="w-full rounded-lg border p-3"
+        />
 
-            <p className="mt-3 text-gray-600">
-              Connect with developers, contributors, and maintainers.
-            </p>
-          </div>
-
-
-          <div className="rounded-xl bg-white p-6 shadow-sm border">
-            <h2 className="text-2xl font-semibold">
-              2. Choose Project
-            </h2>
-
-            <p className="mt-3 text-gray-600">
-              Explore available projects and find where you can contribute.
-            </p>
-          </div>
-
-
-          <div className="rounded-xl bg-white p-6 shadow-sm border">
-            <h2 className="text-2xl font-semibold">
-              3. Contribute
-            </h2>
-
-            <p className="mt-3 text-gray-600">
-              Create issues, submit pull requests, and collaborate.
-            </p>
-          </div>
-
-        </div>
-
-
-        <div className="mt-12 rounded-xl bg-white p-8 text-center shadow-sm border">
-
-          <h2 className="text-3xl font-bold">
-            Ready to contribute?
-          </h2>
-
-          <p className="mt-3 text-gray-600">
-            Follow our guidelines and become part of the community.
-          </p>
-
-          <button className="mt-6 rounded-lg bg-blue-600 px-8 py-3 text-white">
-            Get Started
-          </button>
-
-        </div>
-
-
-      </div>
-
+        <button className="w-full rounded-lg bg-blue-600 py-3 font-semibold text-white hover:bg-blue-700">
+          Submit Application
+        </button>
+      </form>
     </main>
   );
 }
