@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://sosp-pink.vercel.app
+
+# Sitemaps
+Sitemap: https://sosp-pink.vercel.app/sitemap.xml
