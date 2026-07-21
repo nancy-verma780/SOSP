@@ -16,11 +16,11 @@ export default function LoginPage() {
     });
 
     if (error) {
-      alert(error.message);
-      return;
-    }
+  alert(error.message);
+  return;
+}
 
-    alert("Logged in successfully!");
+window.location.href = "/admin";
   }
 
   return (

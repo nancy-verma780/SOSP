@@ -1,108 +1,106 @@
 "use client";
 
+import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
 
 export default function ApplyPage() {
-  const [form, setForm] = useState({
-    full_name: "",
-    email: "",
-    github: "",
-    linkedin: "",
-    college: "",
-    year: "",
-    skills: "",
-    motivation: "",
-  });
+  const params = useSearchParams();
+  const projectId = params.get("project");
 
-  const [message, setMessage] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [github, setGithub] = useState("");
+  const [linkedin, setLinkedin] = useState("");
+  const [resume, setResume] = useState("");
+  const [why, setWhy] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
-    const { error } = await supabase
-      .from("applications")
-      .insert([form]);
+    const { error } = await supabase.from("applications").insert([
+      {
+        project_id: projectId,
+        full_name: name,
+        email,
+        github,
+        linkedin,
+        resume,
+        motivation: why,
+        status: "pending",
+      },
+    ]);
 
     if (error) {
-      setMessage("Error submitting application");
-      console.log(error);
+      alert(error.message);
     } else {
-      setMessage("Application submitted successfully!");
-      setForm({
-        full_name: "",
-        email: "",
-        github: "",
-        linkedin: "",
-        college: "",
-        year: "",
-        skills: "",
-        motivation: "",
-      });
+      alert("Application Submitted Successfully!");
+      setName("");
+      setEmail("");
+      setGithub("");
+      setLinkedin("");
+      setResume("");
+      setWhy("");
     }
-  };
+  }
 
   return (
-    <main>
-      <h1>SOSP Application Form</h1>
+    <main className="mx-auto max-w-3xl px-6 py-16">
+      <h1 className="mb-6 text-5xl font-bold">Apply to Project</h1>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="space-y-5">
 
         <input
+          className="w-full rounded border p-3"
           placeholder="Full Name"
-          value={form.full_name}
-          onChange={(e)=>setForm({...form, full_name:e.target.value})}
+          value={name}
+          onChange={(e)=>setName(e.target.value)}
         />
 
         <input
+          className="w-full rounded border p-3"
           placeholder="Email"
-          value={form.email}
-          onChange={(e)=>setForm({...form, email:e.target.value})}
+          value={email}
+          onChange={(e)=>setEmail(e.target.value)}
         />
 
         <input
-          placeholder="GitHub URL"
-          value={form.github}
-          onChange={(e)=>setForm({...form, github:e.target.value})}
+          className="w-full rounded border p-3"
+          placeholder="GitHub Username"
+          value={github}
+          onChange={(e)=>setGithub(e.target.value)}
         />
 
         <input
-          placeholder="LinkedIn URL"
-          value={form.linkedin}
-          onChange={(e)=>setForm({...form, linkedin:e.target.value})}
+          className="w-full rounded border p-3"
+          placeholder="LinkedIn Profile"
+          value={linkedin}
+          onChange={(e)=>setLinkedin(e.target.value)}
         />
 
         <input
-          placeholder="College"
-          value={form.college}
-          onChange={(e)=>setForm({...form, college:e.target.value})}
-        />
-
-        <input
-          placeholder="Year"
-          value={form.year}
-          onChange={(e)=>setForm({...form, year:e.target.value})}
-        />
-
-        <input
-          placeholder="Skills"
-          value={form.skills}
-          onChange={(e)=>setForm({...form, skills:e.target.value})}
+          className="w-full rounded border p-3"
+          placeholder="Resume Link (Google Drive)"
+          value={resume}
+          onChange={(e)=>setResume(e.target.value)}
         />
 
         <textarea
-          placeholder="Why do you want to join SOSP?"
-          value={form.motivation}
-          onChange={(e)=>setForm({...form, motivation:e.target.value})}
+          className="w-full rounded border p-3"
+          rows={6}
+          placeholder="Why do you want to contribute?"
+          value={why}
+          onChange={(e)=>setWhy(e.target.value)}
         />
 
-        <button type="submit">
+        <button
+          className="w-full rounded bg-blue-600 p-3 text-white"
+          type="submit"
+        >
           Submit Application
         </button>
 
       </form>
-
-      <p>{message}</p>
     </main>
   );
 }
