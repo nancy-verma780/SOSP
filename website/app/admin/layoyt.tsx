@@ -1,23 +1,29 @@
-import { redirect } from "next/navigation";
-import { createClient } from "@supabase/supabase-js";
+import AdminSidebar from "@/components/admin/AdminSidebar";
 
-export default async function AdminLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  );
 
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
+export default function AdminLayout({
+children
+}:{
+children:React.ReactNode
+}){
 
-  if (!session) {
-    redirect("/login");
-  }
 
-  return <>{children}</>;
+return (
+
+<div className="flex">
+
+<AdminSidebar />
+
+
+<main className="flex-1">
+
+{children}
+
+</main>
+
+
+</div>
+
+)
+
 }

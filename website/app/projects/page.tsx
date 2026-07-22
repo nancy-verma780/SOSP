@@ -79,3 +79,7 @@ export default async function Projects() {
     </main>
   );
 }
+const {data:projects}=await supabase
+.from("projects")
+.select("*")
+.eq("status","approved");

@@ -85,3 +85,23 @@ export default function Hero() {
   );
 }
 
+<div className="flex gap-4 mt-8">
+
+
+<a
+href="/join"
+className="bg-black text-white px-6 py-3 rounded"
+>
+Join SOSP
+</a>
+
+
+<a
+href="/submit-project"
+className="border px-6 py-3 rounded"
+>
+Submit Project
+</a>
+
+
+</div>

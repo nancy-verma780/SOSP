@@ -20,7 +20,7 @@ export default function SubmitProject() {
                     title,
                     description,
                     techstack: techStack,
-githuburl: githubUrl,
+                    githuburl: githubUrl,
                     admin_name: adminName,
                     status: "pending"
                 }
