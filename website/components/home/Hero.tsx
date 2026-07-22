@@ -1,107 +1,119 @@
-import Image from "next/image";
-
 export default function Hero() {
+
   return (
-    <section className="bg-gradient-to-br from-blue-50 via-white to-indigo-100">
-      <div className="mx-auto flex min-h-[90vh] max-w-7xl flex-col-reverse items-center justify-between gap-12 px-6 py-16 lg:flex-row">
 
-        {/* Left Content */}
-        <div className="max-w-2xl">
+    <section className="relative overflow-hidden min-h-[85vh] flex items-center justify-center px-6">
 
-          <span className="rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
-            Student Open Source Program
+      {/* Background */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-purple-950 via-purple-900 to-black" />
+
+      <div className="absolute top-20 left-20 w-72 h-72 bg-purple-600/30 rounded-full blur-3xl" />
+
+      <div className="absolute bottom-10 right-20 w-80 h-80 bg-indigo-600/30 rounded-full blur-3xl" />
+
+
+      <div className="max-w-5xl text-center text-white">
+
+
+        <span className="inline-block px-5 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur mb-8">
+
+          🚀 4 Week Open Source Program
+
+        </span>
+
+
+
+        <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+
+          Build.
+          Learn.
+          <span className="text-purple-300">
+            Contribute.
           </span>
 
-          <h1 className="mt-6 text-5xl font-extrabold leading-tight text-gray-900 lg:text-6xl">
-            Learn.
-            <span className="text-blue-600"> Build.</span>
-            <span className="text-indigo-600"> Contribute.</span>
-          </h1>
+        </h1>
 
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            SOSP is a student-led open source program helping beginners
-            contribute to real-world projects, collaborate with mentors,
-            and build strong developer portfolios.
-          </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
-  <a
-    href="/join"
-    className="rounded-lg bg-blue-600 px-8 py-3 font-semibold text-white transition hover:bg-blue-700"
-  >
-    Join SOSP
-  </a>
 
-  <a
-    href="/projects"
-    className="rounded-lg border border-gray-300 bg-white px-8 py-3 font-semibold text-gray-700 hover:bg-gray-100"
-  >
-    Explore Projects
-  </a>
+        <p className="mt-8 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
 
-  <a
-    href="https://github.com/StudentOpenSourceProgram"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="rounded-lg border border-blue-600 px-8 py-3 font-semibold text-blue-600 transition hover:bg-blue-50"
-  >
-    GitHub
-  </a>
-</div>
+          SOSP is a student-driven open source ecosystem where
+          developers collaborate on real-world projects,
+          improve skills and grow together.
 
-          <div className="mt-10 flex gap-10">
-            <div>
-              <h2 className="text-3xl font-bold text-blue-600">4</h2>
-              <p className="text-gray-600">Repositories</p>
-            </div>
+        </p>
 
-            <div>
-              <h2 className="text-3xl font-bold text-blue-600">1</h2>
-              <p className="text-gray-600">Organization</p>
-            </div>
 
-            <div>
-              <h2 className="text-3xl font-bold text-blue-600">∞</h2>
-              <p className="text-gray-600">Opportunities</p>
-            </div>
+
+        <div className="flex flex-col md:flex-row justify-center gap-5 mt-10">
+
+
+          <a
+            href="/join"
+            className="bg-white text-purple-900 font-semibold px-8 py-3 rounded-xl hover:scale-105 transition"
+          >
+
+            Join SOSP
+
+          </a>
+
+
+
+          <a
+            href="/projects"
+            className="border border-white/30 bg-white/10 backdrop-blur px-8 py-3 rounded-xl hover:bg-white/20 transition"
+          >
+
+            Explore Projects
+
+          </a>
+
+
+        </div>
+
+
+
+        <div className="mt-16 grid grid-cols-3 gap-8 max-w-xl mx-auto">
+
+
+          <div>
+            <h3 className="text-3xl font-bold">
+              4+
+            </h3>
+            <p className="text-gray-400">
+              Weeks
+            </p>
           </div>
 
+
+          <div>
+            <h3 className="text-3xl font-bold">
+              50+
+            </h3>
+            <p className="text-gray-400">
+              Projects
+            </p>
+          </div>
+
+
+          <div>
+            <h3 className="text-3xl font-bold">
+              500+
+            </h3>
+            <p className="text-gray-400">
+              Developers
+            </p>
+          </div>
+
+
         </div>
 
-        {/* Right */}
-        <div>
-          <Image
-            src="/logo.png"
-            alt="SOSP Logo"
-            width={420}
-            height={420}
-            priority
-            className="h-auto w-80 lg:w-[420px]"
-          />
-        </div>
 
       </div>
+
+
     </section>
-  );
+
+  )
+
 }
-
-<div className="flex gap-4 mt-8">
-
-
-<a
-href="/join"
-className="bg-black text-white px-6 py-3 rounded"
->
-Join SOSP
-</a>
-
-
-<a
-href="/submit-project"
-className="border px-6 py-3 rounded"
->
-Submit Project
-</a>
-
-
-</div>
